@@ -1,26 +1,40 @@
 function updateTime() {
-// New York City
-let newYorkCityElement = document.querySelector("#new-york-city");
-if (newYorkCityElement) {
-let newYorkCityDateElement = newYorkCityElement.querySelector(".date");
-let newYorkCityTimeElement = newYorkCityElement.querySelector(".time");
-let newYorkCityTime = moment().tz("America/New_York");
+  // Port-au-Prince
+  let portAuPrinceElement = document.querySelector("#port-au-prince");
+  if (portAuPrinceElement) {
+    let portAuPrinceDateElement = portAuPrinceElement.querySelector(".date");
+    let portAuPrinceTimeElement = portAuPrinceElement.querySelector(".time");
+    let portAuPrinceTime = moment().tz("America/Port-au-Prince");
+    portAuPrinceDateElement.innerHTML = portAuPrinceTime.format("MMMM Do YYYY");
+    portAuPrinceTimeElement.innerHTML = portAuPrinceTime.format(
+      "h:mm:ss [<small>]A[</small>]",
+    );
+  }
 
-newYorkCityDateElement.innerHTML = newYorkCityTime.format("MMMM Do YYYY");
-newYorkCityTimeElement.innerHTML = newYorkCityTime.format(
-  "h:mm:ss [<small>]A[</small>]");
- }
+  // London
+  let londonElement = document.querySelector("#london");
+  if (londonElement) {
+    let londonDateElement = londonElement.querySelector(".date");
+    let londonTimeElement = londonElement.querySelector(".time");
+    let londonTime = moment().tz("Europe/London");
 
-// Sydney
-let sydneyElement = document.querySelector("#sydney");
-if (sydneyElement) {
-let sydneyDateElement = sydneyElement.querySelector(".date");
-let sydneyTimeElement = sydneyElement.querySelector(".time");
-let sydneyTime = moment().tz("Australia/Sydney");
-sydneyDateElement.innerHTML = sydneyTime.format("MMMM Do YYYY");
-sydneyTimeElement.innerHTML = sydneyTime.format(
-  "h:mm:ss [<small>]A[</small>]");
- }
+    londonDateElement.innerHTML = londonTime.format("MMMM Do YYYY");
+    londonTimeElement.innerHTML = londonTime.format(
+      "h:mm:ss [<small>]A[</small>]",
+    );
+  }
+
+  // Sydney
+  let sydneyElement = document.querySelector("#sydney");
+  if (sydneyElement) {
+    let sydneyDateElement = sydneyElement.querySelector(".date");
+    let sydneyTimeElement = sydneyElement.querySelector(".time");
+    let sydneyTime = moment().tz("Australia/Sydney");
+    sydneyDateElement.innerHTML = sydneyTime.format("MMMM Do YYYY");
+    sydneyTimeElement.innerHTML = sydneyTime.format(
+      "h:mm:ss [<small>]A[</small>]",
+    );
+  }
 }
 
 function updateCity(event) {
@@ -42,7 +56,10 @@ function updateCity(event) {
        } 
        </small>
        </div>
-    </div>`;
+    </div>
+    </br>
+    <a href="/">Back to Homepage</a>
+    `;
 }
 
 updateTime();
